@@ -19,7 +19,8 @@ struct NavigationBarButtonViewModifier<TrailingItem: View>: ViewModifier {
                 }, label: {
                     Image(systemName: "arrow.backward")
                         .font(Font.title3.weight(.heavy))
-                }),
+                })
+                .buttonStyle(SpringButtonStyle()),
                 trailing: trailingItem
             )
     }

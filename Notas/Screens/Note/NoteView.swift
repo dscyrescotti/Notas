@@ -41,7 +41,9 @@ struct NoteView: View {
             }, label: {
                 Image(systemName: "star.fill")
                     .font(Font.title3.weight(.heavy))
-            }).foregroundColor(.yellow)
+            })
+            .buttonStyle(SpringButtonStyle())
+            .foregroundColor(.yellow)
         )
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Note")
