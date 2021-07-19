@@ -23,6 +23,11 @@
 		E63C02B726A43D9D0014F9F7 /* NoteTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02B626A43D9D0014F9F7 /* NoteTheme.swift */; };
 		E63C02B926A447D70014F9F7 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02B826A447D70014F9F7 /* Date+.swift */; };
 		E63C02BB26A4521D0014F9F7 /* CGSize+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02BA26A4521D0014F9F7 /* CGSize+.swift */; };
+		E64A78B726A525EB00D0CD8F /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78B626A525EB00D0CD8F /* ThemePickerView.swift */; };
+		E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */; };
+		E64A78BC26A55E1E00D0CD8F /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */; };
+		E64A78BE26A5650400D0CD8F /* SpringButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */; };
+		E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */; };
 		E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA66E26A48167005DF108 /* VisualEffectView.swift */; };
 		E6CFA67326A48E95005DF108 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA67226A48E95005DF108 /* View+.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +50,11 @@
 		E63C02B626A43D9D0014F9F7 /* NoteTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTheme.swift; sourceTree = "<group>"; };
 		E63C02B826A447D70014F9F7 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		E63C02BA26A4521D0014F9F7 /* CGSize+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+.swift"; sourceTree = "<group>"; };
+		E64A78B626A525EB00D0CD8F /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
+		E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleXViewModifier.swift; sourceTree = "<group>"; };
+		E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
+		E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringButtonStyle.swift; sourceTree = "<group>"; };
+		E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonViewModifier.swift; sourceTree = "<group>"; };
 		E6CFA66E26A48167005DF108 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		E6CFA67226A48E95005DF108 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +90,7 @@
 		E63C028926A427810014F9F7 /* Notas */ = {
 			isa = PBXGroup;
 			children = (
+				E64A78B826A55DE500D0CD8F /* Modifers */,
 				E63C02B326A43D6B0014F9F7 /* Extensions */,
 				E63C02B026A43C700014F9F7 /* Models */,
 				E63C02AB26A4347E0014F9F7 /* Views */,
@@ -150,6 +161,7 @@
 				E63C02AC26A4349C0014F9F7 /* NoteListView.swift */,
 				E63C02AE26A43C2E0014F9F7 /* NoteCardView.swift */,
 				E6CFA66E26A48167005DF108 /* VisualEffectView.swift */,
+				E64A78B626A525EB00D0CD8F /* ThemePickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,8 +182,19 @@
 				E63C02B826A447D70014F9F7 /* Date+.swift */,
 				E63C02BA26A4521D0014F9F7 /* CGSize+.swift */,
 				E6CFA67226A48E95005DF108 /* View+.swift */,
+				E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E64A78B826A55DE500D0CD8F /* Modifers */ = {
+			isa = PBXGroup;
+			children = (
+				E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */,
+				E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */,
+				E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */,
+			);
+			path = Modifers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,14 +276,19 @@
 				E63C02B526A43D750014F9F7 /* Color+.swift in Sources */,
 				E63C028B26A427810014F9F7 /* NotasApp.swift in Sources */,
 				E63C02B926A447D70014F9F7 /* Date+.swift in Sources */,
+				E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */,
 				E63C02A726A431960014F9F7 /* StarredView.swift in Sources */,
 				E63C02AA26A4340A0014F9F7 /* NoteView.swift in Sources */,
 				E63C02A526A431870014F9F7 /* NotesView.swift in Sources */,
 				E63C02B226A43C8A0014F9F7 /* Note.swift in Sources */,
+				E64A78BE26A5650400D0CD8F /* SpringButtonStyle.swift in Sources */,
 				E63C02AD26A4349C0014F9F7 /* NoteListView.swift in Sources */,
 				E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */,
+				E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */,
+				E64A78BC26A55E1E00D0CD8F /* AnyTransition.swift in Sources */,
 				E63C02BB26A4521D0014F9F7 /* CGSize+.swift in Sources */,
 				E6CFA67326A48E95005DF108 /* View+.swift in Sources */,
+				E64A78B726A525EB00D0CD8F /* ThemePickerView.swift in Sources */,
 				E63C02B726A43D9D0014F9F7 /* NoteTheme.swift in Sources */,
 				E63C02A126A428660014F9F7 /* AppCore.swift in Sources */,
 				E63C029F26A4281B0014F9F7 /* AppView.swift in Sources */,

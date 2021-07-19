@@ -8,42 +8,43 @@
 import SwiftUI
 
 struct NoteView: View {
+    @Environment(\.presentationMode) private var presentationMode
     var body: some View {
         VStack {
-            TextField("Title", text: .constant(""))
+            VStack {
+                ZStack(alignment: .topLeading) {
+                    Text("Title")
+                        .foregroundColor(Color.gray.opacity(0.6))
+                    TextField("", text: .constant(""))
+                }
                 .font(Font.title.weight(.medium))
-            ZStack(alignment: .topLeading) {
-                Text("Note")
-                    .foregroundColor(Color.gray.opacity(0.6))
-                TextEditor(text: .constant(""))
+                ZStack(alignment: .topLeading) {
+                    Text("Note")
+                        .foregroundColor(Color.gray.opacity(0.6))
+                    TextEditor(text: .constant(""))
+                }
+                .font(.body)
             }
-            .font(.body)
+            .accentColor(.black)
+            .padding(15)
+            ThemePickerView()
+                .ignoresSafeArea(.container, edges: .bottom)
         }
-        .accentColor(.yellow)
         .foregroundColor(.black)
-        .padding(15)
-        .navigationBarItems(
-            trailing: HStack {
-                Button(action: {
-                    
-                }, label: {
-                    Image(systemName: "paintpalette.fill")
-                        .font(Font.title3.weight(.heavy))
-                        .foregroundColor(Color("reverse"))
-                        .gradientForeground(colors: NoteTheme.colors)
-                })
-                Spacer(minLength: 20)
-                Button(action: {
-                    
-                }, label: {
-                    Image(systemName: "star.fill")
-                        .font(Font.title3.weight(.heavy))
-                })
-                .foregroundColor(.yellow)
-            }
+        .background(
+            Color(hex: NoteTheme.pale_pink.rawValue)
+                .ignoresSafeArea()
+        )
+        .navigationBarButtonItems(
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "star.fill")
+                    .font(Font.title3.weight(.heavy))
+            }).foregroundColor(.yellow)
         )
         .navigationBarTitleDisplayMode(.inline)
-        .background(Color(hex: NoteTheme.yellow_crayola.rawValue).ignoresSafeArea())
+        .navigationTitle("Note")
     }
     
     init() {

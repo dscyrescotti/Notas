@@ -12,4 +12,12 @@ extension View {
         self.overlay(LinearGradient(gradient: .init(colors: colors), startPoint: .leading, endPoint: .trailing))
             .mask(self)
     }
+    
+    func navigationBarButtonItems() -> some View {
+        self.modifier(NavigationBarButtonViewModifier(trailingItem: EmptyView()))
+    }
+    
+    func navigationBarButtonItems<TrailingItem: View>(_ trailingItem: TrailingItem) -> some View {
+        self.modifier(NavigationBarButtonViewModifier(trailingItem: trailingItem))
+    }
 }

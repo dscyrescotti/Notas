@@ -9,6 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct AppView: View {
+    @Namespace private var namespace
     var body: some View {
         NavigationView {
             TabView {
@@ -33,19 +34,24 @@ struct AppView: View {
                 .overlay(
                     NavigationLink(destination: NoteView()) {
                         Image(systemName: "pencil")
-                            .font(Font.title3.weight(.heavy))
-                            .frame(width: 55, height: 55)
+                            .font(Font.title.weight(.black))
+                            .foregroundColor(Color(.systemBackground))
+                            .gradientForeground(colors: .rainbow)
+                            .frame(width: 60, height: 60)
                             .background(
-                                VisualEffectView(effect: UIBlurEffect(style: .prominent))
-                                    .cornerRadius(25.5)
+                                VisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
+                                    .cornerRadius(30)
                             )
-                    }.padding(),
+                    }
+                    .buttonStyle(SpringButtonStyle())
+                    .padding(15),
                     alignment: .bottomTrailing
                 )
             }
             .navigationTitle("Notas")
         }
-        .accentColor(Color("accent"))
+        .navigationViewStyle(StackNavigationViewStyle())
+        .accentColor(Color(.label))
     }
 }
 

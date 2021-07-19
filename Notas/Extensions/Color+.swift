@@ -33,3 +33,9 @@ extension Color {
         )
     }
 }
+
+extension Array where Element == Color {
+    static var rainbow: Self {
+        [.red, .orange, .yellow, .green, .blue, .purple]
+    }
+}
