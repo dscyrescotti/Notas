@@ -11,9 +11,13 @@ import Combine
 import ComposableArchitecture
 
 extension Realm {
-    func fetch<T: Object>(_ type: T.Type) -> Effect<Results<T>, Never> {
+    func fetch<T: Object>(_ type: T.Type, predicate: NSPredicate? = nil) -> Effect<Results<T>, Never> {
         let promise = Future<Results<T>, Never> { completion in
             let objects = self.objects(type)
+            if let predicate = predicate {
+                completion(.success(objects.filter(predicate)))
+                return
+            }
             completion(.success(objects))
         }
         return promise.eraseToEffect()

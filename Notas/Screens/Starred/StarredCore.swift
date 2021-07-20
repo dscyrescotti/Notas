@@ -1,8 +1,8 @@
 //
-//  NotesCore.swift
+//  StarredCore.swift
 //  Notas
 //
-//  Created by Dscyre Scotti on 19/07/2021.
+//  Created by Dscyre Scotti on 20/07/2021.
 //
 
 import Foundation
@@ -10,17 +10,15 @@ import SwiftUI
 import ComposableArchitecture
 import RealmSwift
 
-struct NotesState: Equatable {
-    let predicate: NSPredicate?
+struct StarredState: Equatable {
     var notes: IdentifiedArrayOf<NoteState>
     
-    init(predicate: NSPredicate? = nil) {
-        self.predicate = predicate
+    init() {
         notes = []
     }
 }
 
-enum NotesAction: Equatable {
+enum StarredAction: Equatable {
     case onAppear
     
     case note(id: UUID, action: NoteAction)
@@ -30,23 +28,24 @@ enum NotesAction: Equatable {
     
 }
 
-struct NotesEnvironment {
+struct StarredEnvironment {
     let realm: Realm
     let mainQueue: AnySchedulerOf<DispatchQueue>
 }
 
-let notesReducer: Reducer<NotesState, NotesAction, NotesEnvironment> = .combine(
-    noteReducer.forEach(state: \.notes, action: /NotesAction.note, environment: { environment in
+let starredReducer: Reducer<StarredState, StarredAction, StarredEnvironment> = .combine(
+    noteReducer.forEach(state: \.notes, action: /StarredAction.note, environment: { environment in
         NoteEnvironment(realm: environment.realm, mainQueue: environment.mainQueue)
     }),
     .init({ state, action, environment in
         switch action {
         case .onAppear:
+            print("appear")
             return .init(value: .load)
         case .load:
             return environment.realm
-                .fetch(NoteObject.self, predicate: state.predicate)
-                .map { results -> NotesAction in
+                .fetch(NoteObject.self, predicate: NSPredicate(format: "starred == %@", NSNumber(true)))
+                .map { results -> StarredAction in
                     let notes = Array(results.map { $0.note })
                     return .notesChange(notes)
                 }

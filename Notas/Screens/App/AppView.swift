@@ -24,7 +24,7 @@ struct AppView: View {
                                 })
                             }
                             .tag(Selection.notes)
-                        StarredView()
+                        StarredView(store: starredStore)
                             .tabItem {
                                 Label(title: {
                                     Text("Starred")
@@ -35,7 +35,7 @@ struct AppView: View {
                             .tag(Selection.starred)
                     }
                     .overlay(
-                        NavigationLink(destination: NoteView.storeView(.create), isActive: viewStore.binding(get: { $0.isActive }, send: { .isActiveChange($0) })) {
+                        NavigationLink(destination: NoteView.storeView(.create)) {
                             Image(systemName: "pencil")
                                 .font(Font.title.weight(.black))
                                 .foregroundColor(Color(.systemBackground))
@@ -47,8 +47,7 @@ struct AppView: View {
                                 )
                         }
                         .buttonStyle(SpringButtonStyle())
-                        .padding(.horizontal, 15)
-                        .padding(.vertical, 10),
+                        .padding([.horizontal, .bottom], 15),
                         alignment: .bottomTrailing
                     )
                 }
@@ -67,6 +66,10 @@ extension AppView {
     
     var notesStore: Store<NotesState, NotesAction> {
         store.scope(state: { $0.notesState }, action: AppAction.notes)
+    }
+    
+    var starredStore: Store<StarredState, StarredAction> {
+        store.scope(state: { $0.starredState }, action: AppAction.starred)
     }
 }
 

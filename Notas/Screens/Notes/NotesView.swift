@@ -16,13 +16,13 @@ struct NotesView: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 15), count: proxy.size.isPortrait(2, 3)), spacing: 15) {
                         ForEachStore(store.scope(state: { $0.notes }, action: NotesAction.note(id:action:))) { noteStore in
-                            NavigationLink(destination: NoteView(store: noteStore)) {
-                                WithViewStore(noteStore) { viewStore in
+                            WithViewStore(noteStore) { viewStore in
+                                NavigationLink(destination: NoteView(store: noteStore)) {
                                     NoteCardView(note: viewStore.mode.note)
                                         .frame(height: 200)
                                 }
+                                .buttonStyle(SpringButtonStyle())
                             }
-                            .buttonStyle(SpringButtonStyle())
                         }
                     }
                     .padding(15)

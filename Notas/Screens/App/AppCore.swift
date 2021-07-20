@@ -13,21 +13,19 @@ import RealmSwift
 struct AppState: Equatable {
     var selection: Selection
     var notesState: NotesState
-    var isActive: Bool
+    var starredState: StarredState
     
     init() {
         self.notesState = NotesState()
+        self.starredState = StarredState()
         self.selection = .notes
-        self.isActive = false
     }
 }
 
 enum AppAction: Equatable {
     case tabChange(Selection)
     case notes(NotesAction)
-    case isActiveChange(Bool)
-    case load
-    case notesChange([Note])
+    case starred(StarredAction)
 }
 
 struct AppEnvironment {
@@ -41,35 +39,21 @@ struct AppEnvironment {
 }
 
 let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
-    notesReducer.pullback(state: \.notesState, action: /AppAction.notes, environment: { envrionment in
-        NotesEnvironment(realm: envrionment.realm, mainQueue: envrionment.mainQueue)
+    starredReducer.pullback(state: \.starredState, action: /AppAction.starred, environment: { environment in
+        StarredEnvironment(realm: environment.realm, mainQueue: environment.mainQueue)
+    }),
+    notesReducer.pullback(state: \.notesState, action: /AppAction.notes, environment: { environment in
+        NotesEnvironment(realm: environment.realm, mainQueue: environment.mainQueue)
     }),
     Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
         switch action {
         case .tabChange(let selection):
             state.selection = selection
             return .none
-        case .isActiveChange(let isActive):
-            state.isActive = isActive
-            if !isActive {
-                return .init(value: .load)
-            }
-            return .none
-        case .load:
-            return environment.realm
-                .fetch(NoteObject.self)
-                .map { results -> AppAction in
-                    let notes = Array(results.map { $0.note })
-                    return .notesChange(notes)
-                }
-                .eraseToEffect()
-        case .notesChange(let notes):
-            state.notesState.notes = IdentifiedArray(uniqueElements: notes.map { NoteState(.edit($0)) })
-            return .none
         default:
             return .none
         }
     }
-).debug()
+)
 
 

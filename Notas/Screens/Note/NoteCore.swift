@@ -18,8 +18,6 @@ struct NoteState: Equatable, Identifiable {
     var theme: NoteTheme
     var starred: Bool
     
-    var isDismiss = false
-    
     init(_ mode: Mode) {
         self.mode = mode
         let note = mode.note

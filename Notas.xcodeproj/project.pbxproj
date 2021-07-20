@@ -14,7 +14,6 @@
 		E63C029F26A4281B0014F9F7 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C029E26A4281B0014F9F7 /* AppView.swift */; };
 		E63C02A126A428660014F9F7 /* AppCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02A026A428660014F9F7 /* AppCore.swift */; };
 		E63C02A526A431870014F9F7 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02A426A431870014F9F7 /* NotesView.swift */; };
-		E63C02A726A431960014F9F7 /* StarredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02A626A431960014F9F7 /* StarredView.swift */; };
 		E63C02AA26A4340A0014F9F7 /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02A926A4340A0014F9F7 /* NoteView.swift */; };
 		E63C02AD26A4349C0014F9F7 /* NoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02AC26A4349C0014F9F7 /* NoteListView.swift */; };
 		E63C02AF26A43C2E0014F9F7 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02AE26A43C2E0014F9F7 /* NoteCardView.swift */; };
@@ -34,6 +33,8 @@
 		E6C2B40226A683BB0068D205 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40126A683BB0068D205 /* Change.swift */; };
 		E6C2B40626A68F130068D205 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40526A68F130068D205 /* AppError.swift */; };
 		E6C2B40826A696A00068D205 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40726A696A00068D205 /* Signal.swift */; };
+		E6C2B40D26A6F0760068D205 /* StarredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40C26A6F0760068D205 /* StarredView.swift */; };
+		E6C2B40F26A6F0F10068D205 /* StarredCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40E26A6F0F10068D205 /* StarredCore.swift */; };
 		E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA66E26A48167005DF108 /* VisualEffectView.swift */; };
 		E6CFA67326A48E95005DF108 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA67226A48E95005DF108 /* View+.swift */; };
 		E6F26A2C26A590BA00A3660A /* NotesCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A2B26A590BA00A3660A /* NotesCore.swift */; };
@@ -52,7 +53,6 @@
 		E63C029E26A4281B0014F9F7 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		E63C02A026A428660014F9F7 /* AppCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCore.swift; sourceTree = "<group>"; };
 		E63C02A426A431870014F9F7 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
-		E63C02A626A431960014F9F7 /* StarredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredView.swift; sourceTree = "<group>"; };
 		E63C02A926A4340A0014F9F7 /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		E63C02AC26A4349C0014F9F7 /* NoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListView.swift; sourceTree = "<group>"; };
 		E63C02AE26A43C2E0014F9F7 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
@@ -70,6 +70,8 @@
 		E6C2B40126A683BB0068D205 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
 		E6C2B40526A68F130068D205 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E6C2B40726A696A00068D205 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		E6C2B40C26A6F0760068D205 /* StarredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredView.swift; sourceTree = "<group>"; };
+		E6C2B40E26A6F0F10068D205 /* StarredCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarredCore.swift; sourceTree = "<group>"; };
 		E6CFA66E26A48167005DF108 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		E6CFA67226A48E95005DF108 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E6F26A2B26A590BA00A3660A /* NotesCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCore.swift; sourceTree = "<group>"; };
@@ -138,8 +140,8 @@
 		E63C029C26A427DC0014F9F7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				E6C2B40B26A6F0600068D205 /* Starred */,
 				E63C02A826A433F70014F9F7 /* Note */,
-				E63C02A326A4316D0014F9F7 /* Starred */,
 				E63C02A226A4315D0014F9F7 /* Notes */,
 				E63C029D26A427F40014F9F7 /* App */,
 			);
@@ -162,14 +164,6 @@
 				E6F26A2B26A590BA00A3660A /* NotesCore.swift */,
 			);
 			path = Notes;
-			sourceTree = "<group>";
-		};
-		E63C02A326A4316D0014F9F7 /* Starred */ = {
-			isa = PBXGroup;
-			children = (
-				E63C02A626A431960014F9F7 /* StarredView.swift */,
-			);
-			path = Starred;
 			sourceTree = "<group>";
 		};
 		E63C02A826A433F70014F9F7 /* Note */ = {
@@ -234,6 +228,15 @@
 				E6C2B40726A696A00068D205 /* Signal.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E6C2B40B26A6F0600068D205 /* Starred */ = {
+			isa = PBXGroup;
+			children = (
+				E6C2B40C26A6F0760068D205 /* StarredView.swift */,
+				E6C2B40E26A6F0F10068D205 /* StarredCore.swift */,
+			);
+			path = Starred;
 			sourceTree = "<group>";
 		};
 		E6F26A3526A5DE3200A3660A /* Objects */ = {
@@ -328,16 +331,17 @@
 				E63C02B526A43D750014F9F7 /* Color+.swift in Sources */,
 				E6F26A3126A5A32300A3660A /* Optional+.swift in Sources */,
 				E6F26A3926A5E04600A3660A /* Realm+.swift in Sources */,
+				E6C2B40F26A6F0F10068D205 /* StarredCore.swift in Sources */,
 				E63C028B26A427810014F9F7 /* NotasApp.swift in Sources */,
 				E63C02B926A447D70014F9F7 /* Date+.swift in Sources */,
 				E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */,
 				E6C2B3FE26A683480068D205 /* Mode.swift in Sources */,
-				E63C02A726A431960014F9F7 /* StarredView.swift in Sources */,
 				E63C02AA26A4340A0014F9F7 /* NoteView.swift in Sources */,
 				E63C02A526A431870014F9F7 /* NotesView.swift in Sources */,
 				E63C02B226A43C8A0014F9F7 /* Note.swift in Sources */,
 				E64A78BE26A5650400D0CD8F /* SpringButtonStyle.swift in Sources */,
 				E63C02AD26A4349C0014F9F7 /* NoteListView.swift in Sources */,
+				E6C2B40D26A6F0760068D205 /* StarredView.swift in Sources */,
 				E6C2B40226A683BB0068D205 /* Change.swift in Sources */,
 				E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */,
 				E64A78BC26A55E1E00D0CD8F /* AnyTransition+.swift in Sources */,
