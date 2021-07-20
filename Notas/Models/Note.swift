@@ -33,4 +33,8 @@ struct Note: Equatable {
         self.theme = theme
         self.starred = starred
     }
+    
+    var object: NoteObject {
+        .init(value: ["id": id, "title": title, "body": body, "createdAt": createdAt, "theme": theme, "starred": starred])
+    }
 }

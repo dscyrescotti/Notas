@@ -23,7 +23,7 @@ struct AppView: View {
                                     Image(systemName: "note.text")
                                 })
                             }
-                            .tag(AppSelection.notes)
+                            .tag(Selection.notes)
                         StarredView()
                             .tabItem {
                                 Label(title: {
@@ -32,7 +32,7 @@ struct AppView: View {
                                     Image(systemName: "star.fill")
                                 })
                             }
-                            .tag(AppSelection.starred)
+                            .tag(Selection.starred)
                     }
                     .overlay(
                         NavigationLink(destination: NoteView.storeView(.create)) {

@@ -45,14 +45,17 @@ struct NoteView: View {
             )
             .navigationBarButtonItems(
                 Button(action: {
-                    
+                    viewStore.send(.starredChange(!viewStore.starred))
                 }, label: {
                     Image(systemName: "star.fill")
                         .font(Font.title3.weight(.heavy))
                 })
                 .buttonStyle(SpringButtonStyle())
-                .foregroundColor(.yellow)
+                .foregroundColor(viewStore.starred ? .yellow : .gray)
             )
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         })
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Note")
