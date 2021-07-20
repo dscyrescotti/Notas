@@ -43,7 +43,6 @@ struct NoteView: View {
                 Color(hex: viewStore.theme.rawValue)
                     .ignoresSafeArea()
             )
-            .navigationBarBackButtonHidden(true)
             .navigationBarItems(
                 leading: Button(action: {
                     viewStore.send(.onDisappear)
@@ -68,6 +67,7 @@ struct NoteView: View {
         })
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Note")
+        .navigationBarBackButtonHidden(true)
     }
     
     init(store: Store<NoteState, NoteAction>) {
