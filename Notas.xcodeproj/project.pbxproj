@@ -25,11 +25,19 @@
 		E63C02BB26A4521D0014F9F7 /* CGSize+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C02BA26A4521D0014F9F7 /* CGSize+.swift */; };
 		E64A78B726A525EB00D0CD8F /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78B626A525EB00D0CD8F /* ThemePickerView.swift */; };
 		E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */; };
-		E64A78BC26A55E1E00D0CD8F /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */; };
+		E64A78BC26A55E1E00D0CD8F /* AnyTransition+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BB26A55E1E00D0CD8F /* AnyTransition+.swift */; };
 		E64A78BE26A5650400D0CD8F /* SpringButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */; };
 		E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */; };
+		E64A78C526A57B2300D0CD8F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E64A78C426A57B2300D0CD8F /* Realm */; };
+		E64A78C726A57B2300D0CD8F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E64A78C626A57B2300D0CD8F /* RealmSwift */; };
 		E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA66E26A48167005DF108 /* VisualEffectView.swift */; };
 		E6CFA67326A48E95005DF108 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA67226A48E95005DF108 /* View+.swift */; };
+		E6F26A2C26A590BA00A3660A /* NotesCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A2B26A590BA00A3660A /* NotesCore.swift */; };
+		E6F26A2F26A5924100A3660A /* NoteCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A2E26A5924100A3660A /* NoteCore.swift */; };
+		E6F26A3126A5A32300A3660A /* Optional+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A3026A5A32300A3660A /* Optional+.swift */; };
+		E6F26A3326A5A5BB00A3660A /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A3226A5A5BB00A3660A /* Database.swift */; };
+		E6F26A3726A5DE4100A3660A /* NoteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A3626A5DE4100A3660A /* NoteObject.swift */; };
+		E6F26A3926A5E04600A3660A /* Realm+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A3826A5E04600A3660A /* Realm+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,11 +60,17 @@
 		E63C02BA26A4521D0014F9F7 /* CGSize+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+.swift"; sourceTree = "<group>"; };
 		E64A78B626A525EB00D0CD8F /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleXViewModifier.swift; sourceTree = "<group>"; };
-		E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
+		E64A78BB26A55E1E00D0CD8F /* AnyTransition+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+.swift"; sourceTree = "<group>"; };
 		E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringButtonStyle.swift; sourceTree = "<group>"; };
 		E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonViewModifier.swift; sourceTree = "<group>"; };
 		E6CFA66E26A48167005DF108 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		E6CFA67226A48E95005DF108 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
+		E6F26A2B26A590BA00A3660A /* NotesCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCore.swift; sourceTree = "<group>"; };
+		E6F26A2E26A5924100A3660A /* NoteCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCore.swift; sourceTree = "<group>"; };
+		E6F26A3026A5A32300A3660A /* Optional+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+.swift"; sourceTree = "<group>"; };
+		E6F26A3226A5A5BB00A3660A /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E6F26A3626A5DE4100A3660A /* NoteObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteObject.swift; sourceTree = "<group>"; };
+		E6F26A3826A5E04600A3660A /* Realm+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Realm+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E64A78C726A57B2300D0CD8F /* RealmSwift in Frameworks */,
+				E64A78C526A57B2300D0CD8F /* Realm in Frameworks */,
 				E63C029B26A427B30014F9F7 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,12 +106,14 @@
 		E63C028926A427810014F9F7 /* Notas */ = {
 			isa = PBXGroup;
 			children = (
+				E6F26A3526A5DE3200A3660A /* Objects */,
 				E64A78B826A55DE500D0CD8F /* Modifers */,
 				E63C02B326A43D6B0014F9F7 /* Extensions */,
 				E63C02B026A43C700014F9F7 /* Models */,
 				E63C02AB26A4347E0014F9F7 /* Views */,
 				E63C029C26A427DC0014F9F7 /* Screens */,
 				E63C028A26A427810014F9F7 /* NotasApp.swift */,
+				E6F26A3226A5A5BB00A3660A /* Database.swift */,
 				E63C028E26A427850014F9F7 /* Assets.xcassets */,
 				E63C029326A427850014F9F7 /* Info.plist */,
 				E63C029026A427850014F9F7 /* Preview Content */,
@@ -135,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				E63C02A426A431870014F9F7 /* NotesView.swift */,
+				E6F26A2B26A590BA00A3660A /* NotesCore.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -151,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				E63C02A926A4340A0014F9F7 /* NoteView.swift */,
+				E6F26A2E26A5924100A3660A /* NoteCore.swift */,
 			);
 			path = Note;
 			sourceTree = "<group>";
@@ -182,7 +202,9 @@
 				E63C02B826A447D70014F9F7 /* Date+.swift */,
 				E63C02BA26A4521D0014F9F7 /* CGSize+.swift */,
 				E6CFA67226A48E95005DF108 /* View+.swift */,
-				E64A78BB26A55E1E00D0CD8F /* AnyTransition.swift */,
+				E64A78BB26A55E1E00D0CD8F /* AnyTransition+.swift */,
+				E6F26A3026A5A32300A3660A /* Optional+.swift */,
+				E6F26A3826A5E04600A3660A /* Realm+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -195,6 +217,14 @@
 				E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */,
 			);
 			path = Modifers;
+			sourceTree = "<group>";
+		};
+		E6F26A3526A5DE3200A3660A /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				E6F26A3626A5DE4100A3660A /* NoteObject.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +245,8 @@
 			name = Notas;
 			packageProductDependencies = (
 				E63C029A26A427B30014F9F7 /* ComposableArchitecture */,
+				E64A78C426A57B2300D0CD8F /* Realm */,
+				E64A78C626A57B2300D0CD8F /* RealmSwift */,
 			);
 			productName = Notas;
 			productReference = E63C028726A427810014F9F7 /* Notas.app */;
@@ -245,6 +277,7 @@
 			mainGroup = E63C027E26A427810014F9F7;
 			packageReferences = (
 				E63C029926A427B30014F9F7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				E64A78C326A57B2300D0CD8F /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = E63C028826A427810014F9F7 /* Products */;
 			projectDirPath = "";
@@ -274,9 +307,12 @@
 			files = (
 				E63C02AF26A43C2E0014F9F7 /* NoteCardView.swift in Sources */,
 				E63C02B526A43D750014F9F7 /* Color+.swift in Sources */,
+				E6F26A3126A5A32300A3660A /* Optional+.swift in Sources */,
+				E6F26A3926A5E04600A3660A /* Realm+.swift in Sources */,
 				E63C028B26A427810014F9F7 /* NotasApp.swift in Sources */,
 				E63C02B926A447D70014F9F7 /* Date+.swift in Sources */,
 				E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */,
+				E6F26A3326A5A5BB00A3660A /* Database.swift in Sources */,
 				E63C02A726A431960014F9F7 /* StarredView.swift in Sources */,
 				E63C02AA26A4340A0014F9F7 /* NoteView.swift in Sources */,
 				E63C02A526A431870014F9F7 /* NotesView.swift in Sources */,
@@ -285,11 +321,14 @@
 				E63C02AD26A4349C0014F9F7 /* NoteListView.swift in Sources */,
 				E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */,
 				E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */,
-				E64A78BC26A55E1E00D0CD8F /* AnyTransition.swift in Sources */,
+				E64A78BC26A55E1E00D0CD8F /* AnyTransition+.swift in Sources */,
 				E63C02BB26A4521D0014F9F7 /* CGSize+.swift in Sources */,
 				E6CFA67326A48E95005DF108 /* View+.swift in Sources */,
 				E64A78B726A525EB00D0CD8F /* ThemePickerView.swift in Sources */,
+				E6F26A3726A5DE4100A3660A /* NoteObject.swift in Sources */,
 				E63C02B726A43D9D0014F9F7 /* NoteTheme.swift in Sources */,
+				E6F26A2F26A5924100A3660A /* NoteCore.swift in Sources */,
+				E6F26A2C26A590BA00A3660A /* NotesCore.swift in Sources */,
 				E63C02A126A428660014F9F7 /* AppCore.swift in Sources */,
 				E63C029F26A4281B0014F9F7 /* AppView.swift in Sources */,
 			);
@@ -490,6 +529,14 @@
 				minimumVersion = 0.22.0;
 			};
 		};
+		E64A78C326A57B2300D0CD8F /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -497,6 +544,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E63C029926A427B30014F9F7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		E64A78C426A57B2300D0CD8F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E64A78C326A57B2300D0CD8F /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E64A78C626A57B2300D0CD8F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E64A78C326A57B2300D0CD8F /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

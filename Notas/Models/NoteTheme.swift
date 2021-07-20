@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import RealmSwift
 
-enum NoteTheme: String, CaseIterable {
+enum NoteTheme: String, CaseIterable, PersistableEnum {
     case jasmine = "#ffda85"
     case yellow_crayola = "#ffeb99"
     case pink = "#fec2ca"

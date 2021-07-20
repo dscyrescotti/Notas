@@ -21,7 +21,7 @@ struct NoteCardView: View {
                     .padding(3)
                     .background(Circle())
             }
-            Text(note.body ?? "Note")
+            Text(note.body)
                 .frame(maxHeight: .infinity, alignment: .topLeading)
             Text(note.createdAt.toString)
                 .font(.footnote)
@@ -35,7 +35,7 @@ struct NoteCardView: View {
 
 struct NoteCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NoteCardView(note: Note(title: nil, body: nil, theme: .tea_green))
+        NoteCardView(note: Note())
             .previewLayout(.fixed(width: 250, height: 300))
     }
 }

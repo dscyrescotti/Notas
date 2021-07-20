@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThemePickerView: View {
     @State private var isPresent: Bool = false
+    @Binding var theme: NoteTheme
     var body: some View {
         HStack(spacing: 15) {
             Button(action: {
@@ -20,52 +21,56 @@ struct ThemePickerView: View {
                     .font(Font.title.weight(.medium))
                     .foregroundColor(Color(.systemBackground))
                     .gradientForeground(colors: .rainbow)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 35, height: 35)
             }
             .buttonStyle(SpringButtonStyle())
             if isPresent {
                 Group {
                     Color(.label)
-                        .frame(width: 1.5, height: 30)
+                        .frame(width: 1.5, height: 35)
                         .transition(.scale)
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 15) {
+                        HStack(spacing: 15) {
                             ForEach(NoteTheme.allCases, id: \.self) { theme in
-                                ZStack {
-                                    Circle()
-                                        .foregroundColor(Color(hex: theme.rawValue))
-                                    Image(systemName: "checkmark")
-                                        .font(Font.headline.bold())
+                                Button(action: {
+                                    self.theme = theme
+                                }) {
+                                    ZStack {
+                                        Circle()
+                                            .foregroundColor(Color(hex: theme.rawValue))
+                                        if self.theme == theme {
+                                            Image(systemName: "checkmark")
+                                                .font(Font.subheadline.bold())
+                                        }
+                                    }
                                 }
-                                .frame(width: 30)
-                                .onTapGesture {
-
-                                }
+                                .buttonStyle(SpringButtonStyle())
+                                .frame(width: 35, height: 35)
                             }
                         }
                     }
-                    .frame(height: 30)
-                    .cornerRadius(20)
-                    .animation(.spring())
+                    .frame(height: 35)
+                    .cornerRadius(17.5)
                     .transition(.scaleX)
                 }
             }
         }
         .transition(.move(edge: .bottom))
-        .padding(15)
+        .padding(10)
         .background(
             VisualEffectView(effect: UIBlurEffect(style: .systemThickMaterial))
                 .cornerRadius(35)
         )
         .clipped()
-        .padding(15)
+        .padding(.horizontal, 15)
+        .padding(.vertical, 3)
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
 struct ThemePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ThemePickerView()
+        ThemePickerView(theme: .constant(.aero_blue))
     }
 }
 

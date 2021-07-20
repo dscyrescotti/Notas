@@ -13,8 +13,8 @@ struct NoteListView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: Array(repeating: .init(.flexible(), spacing: 15), count: proxy.size.isPortrait(2, 3)), spacing: 15) {
                     ForEach(0..<10, id: \.self) { _ in
-                        NavigationLink(destination: NoteView()) {
-                            NoteCardView(note: .init(title: nil, body: nil, theme: .aero_blue))
+                        NavigationLink(destination: NoteView.storeView(.create)) {
+                            NoteCardView(note: .init())
                                 .frame(height: 200)
                         }
                         .buttonStyle(SpringButtonStyle())

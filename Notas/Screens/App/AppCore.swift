@@ -10,20 +10,30 @@ import ComposableArchitecture
 import Combine
 
 struct AppState: Equatable {
+    var selection: AppSelection
     
+    init() {
+        self.selection = .notes
+    }
 }
 
 enum AppAction: Equatable {
-    
+    case tabChange(AppSelection)
 }
 
-struct AppEnvironment {
-    
-}
+struct AppEnvironment { }
 
-let appReducer = Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
-    switch action {
-    default:
-        return .none
+let appReducer: Reducer<AppState, AppAction, AppEnvironment> = .combine(
+    Reducer<AppState, AppAction, AppEnvironment> { state, action, environment in
+        switch action {
+        case .tabChange(let selection):
+            state.selection = selection
+            return .none
+        }
     }
+).debug()
+
+enum AppSelection: Equatable {
+    case notes
+    case starred
 }
