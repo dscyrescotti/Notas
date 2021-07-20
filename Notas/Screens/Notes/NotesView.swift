@@ -18,7 +18,7 @@ struct NotesView: View {
                         ForEachStore(store.scope(state: { $0.notes }, action: NotesAction.note(id:action:))) { noteStore in
                             WithViewStore(noteStore) { viewStore in
                                 NavigationLink(destination: NoteView(store: noteStore)) {
-                                    NoteCardView(note: viewStore.mode.note)
+                                    NoteCardView(store: noteStore)
                                         .frame(height: 200)
                                 }
                                 .buttonStyle(SpringButtonStyle())

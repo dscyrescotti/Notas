@@ -17,6 +17,7 @@ struct NoteState: Equatable, Identifiable {
     var body: String
     var theme: NoteTheme
     var starred: Bool
+    let createdAt: Date
     
     init(_ mode: Mode) {
         self.mode = mode
@@ -26,6 +27,7 @@ struct NoteState: Equatable, Identifiable {
         self.body = note.body
         self.theme = note.theme
         self.starred = note.starred
+        self.createdAt = note.createdAt
     }
     
     var object: NoteObject {
@@ -69,7 +71,6 @@ let noteReducer = Reducer<NoteState, NoteAction, NoteEnvironment> { state, actio
     struct Cancellable: Hashable { }
     switch action {
     case .onAppear:
-        print(state.id)
         if state.mode == .create {
             return .init(value: .create)
         }

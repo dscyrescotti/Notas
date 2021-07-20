@@ -40,7 +40,6 @@ let starredReducer: Reducer<StarredState, StarredAction, StarredEnvironment> = .
     .init({ state, action, environment in
         switch action {
         case .onAppear:
-            print("appear")
             return .init(value: .load)
         case .load:
             return environment.realm
