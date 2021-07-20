@@ -11,11 +11,33 @@ import Combine
 import ComposableArchitecture
 
 extension Realm {
+    func fetch<T: Object>(_ type: T.Type) -> Effect<Results<T>, Never> {
+        let promise = Future<Results<T>, Never> { completion in
+            let objects = self.objects(type)
+            completion(.success(objects))
+        }
+        return promise.eraseToEffect()
+    }
+    
     func save<T: Object>(_ type: T.Type, value: [String: Any]) -> Effect<Signal, AppError> {
         let promise = Future<Signal, AppError> { completion in
             do {
                 try self.write {
                     self.create(type, value: value, update: .modified)
+                }
+                completion(.success(.signal))
+            } catch {
+                completion(.failure(AppError.unableToSave))
+            }
+        }
+        return promise.eraseToEffect()
+    }
+    
+    func save<T: Object>(_ object: T) -> Effect<Signal, AppError> {
+        let promise = Future<Signal, AppError> { completion in
+            do {
+                try self.write {
+                    self.create(T.self, value: object, update: .modified)
                 }
                 completion(.success(.signal))
             } catch {
@@ -39,11 +61,11 @@ extension Realm {
         return promise.eraseToEffect()
     }
     
-    func delete<T: Object>(object: T) -> Effect<Signal, AppError> {
+    func delete<T: Object>(_ type: T.Type, id: UUID) -> Effect<Signal, AppError> {
         let promise = Future<Signal, AppError> { completion in
             do {
                 try self.write {
-                    self.delete(object)
+                    self.delete(self.objects(type).filter("id == %@", id))
                 }
                 completion(.success(.signal))
             } catch {

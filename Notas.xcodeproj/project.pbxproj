@@ -27,7 +27,6 @@
 		E64A78BA26A55E0500D0CD8F /* ScaleXViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */; };
 		E64A78BC26A55E1E00D0CD8F /* AnyTransition+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BB26A55E1E00D0CD8F /* AnyTransition+.swift */; };
 		E64A78BE26A5650400D0CD8F /* SpringButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */; };
-		E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */; };
 		E64A78C526A57B2300D0CD8F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E64A78C426A57B2300D0CD8F /* Realm */; };
 		E64A78C726A57B2300D0CD8F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E64A78C626A57B2300D0CD8F /* RealmSwift */; };
 		E6C2B3FE26A683480068D205 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B3FD26A683480068D205 /* Mode.swift */; };
@@ -35,7 +34,6 @@
 		E6C2B40226A683BB0068D205 /* Change.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40126A683BB0068D205 /* Change.swift */; };
 		E6C2B40626A68F130068D205 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40526A68F130068D205 /* AppError.swift */; };
 		E6C2B40826A696A00068D205 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40726A696A00068D205 /* Signal.swift */; };
-		E6C2B40A26A69AFE0068D205 /* CancelToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C2B40926A69AFE0068D205 /* CancelToken.swift */; };
 		E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA66E26A48167005DF108 /* VisualEffectView.swift */; };
 		E6CFA67326A48E95005DF108 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CFA67226A48E95005DF108 /* View+.swift */; };
 		E6F26A2C26A590BA00A3660A /* NotesCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F26A2B26A590BA00A3660A /* NotesCore.swift */; };
@@ -67,13 +65,11 @@
 		E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleXViewModifier.swift; sourceTree = "<group>"; };
 		E64A78BB26A55E1E00D0CD8F /* AnyTransition+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyTransition+.swift"; sourceTree = "<group>"; };
 		E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpringButtonStyle.swift; sourceTree = "<group>"; };
-		E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonViewModifier.swift; sourceTree = "<group>"; };
 		E6C2B3FD26A683480068D205 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
 		E6C2B3FF26A6837C0068D205 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
 		E6C2B40126A683BB0068D205 /* Change.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Change.swift; sourceTree = "<group>"; };
 		E6C2B40526A68F130068D205 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		E6C2B40726A696A00068D205 /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
-		E6C2B40926A69AFE0068D205 /* CancelToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelToken.swift; sourceTree = "<group>"; };
 		E6CFA66E26A48167005DF108 /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		E6CFA67226A48E95005DF108 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		E6F26A2B26A590BA00A3660A /* NotesCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesCore.swift; sourceTree = "<group>"; };
@@ -224,7 +220,6 @@
 			children = (
 				E64A78B926A55E0500D0CD8F /* ScaleXViewModifier.swift */,
 				E64A78BD26A5650400D0CD8F /* SpringButtonStyle.swift */,
-				E64A78C126A5707600D0CD8F /* NavigationBarButtonViewModifier.swift */,
 			);
 			path = Modifers;
 			sourceTree = "<group>";
@@ -237,7 +232,6 @@
 				E6C2B40126A683BB0068D205 /* Change.swift */,
 				E6C2B40526A68F130068D205 /* AppError.swift */,
 				E6C2B40726A696A00068D205 /* Signal.swift */,
-				E6C2B40926A69AFE0068D205 /* CancelToken.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -346,7 +340,6 @@
 				E63C02AD26A4349C0014F9F7 /* NoteListView.swift in Sources */,
 				E6C2B40226A683BB0068D205 /* Change.swift in Sources */,
 				E6CFA66F26A48167005DF108 /* VisualEffectView.swift in Sources */,
-				E64A78C226A5707600D0CD8F /* NavigationBarButtonViewModifier.swift in Sources */,
 				E64A78BC26A55E1E00D0CD8F /* AnyTransition+.swift in Sources */,
 				E63C02BB26A4521D0014F9F7 /* CGSize+.swift in Sources */,
 				E6CFA67326A48E95005DF108 /* View+.swift in Sources */,
@@ -357,7 +350,6 @@
 				E6F26A2C26A590BA00A3660A /* NotesCore.swift in Sources */,
 				E63C02A126A428660014F9F7 /* AppCore.swift in Sources */,
 				E6C2B40626A68F130068D205 /* AppError.swift in Sources */,
-				E6C2B40A26A69AFE0068D205 /* CancelToken.swift in Sources */,
 				E63C029F26A4281B0014F9F7 /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

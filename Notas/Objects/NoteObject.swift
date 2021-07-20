@@ -9,12 +9,12 @@ import RealmSwift
 import Foundation
 
 class NoteObject: Object {
-    @Persisted(primaryKey: true) var id: UUID = UUID()
-    @Persisted var title: String = ""
-    @Persisted var body: String = ""
-    @Persisted var createdAt = Date()
-    @Persisted var theme: NoteTheme = NoteTheme.allCases.randomElement()!
-    @Persisted var starred: Bool = false
+    @Persisted(primaryKey: true) var id: UUID
+    @Persisted var title: String
+    @Persisted var body: String
+    @Persisted var createdAt: Date
+    @Persisted var theme: NoteTheme
+    @Persisted var starred: Bool
 }
 
 extension NoteObject {

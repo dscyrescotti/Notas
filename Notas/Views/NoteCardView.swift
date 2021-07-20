@@ -11,13 +11,14 @@ struct NoteCardView: View {
     let note: Note
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text(note.title ?? "Untitle")
+            HStack(alignment: .top) {
+                Text(note.title)
                     .font(.title3)
+                    .lineLimit(2)
                 Spacer()
                 Image(systemName: "star.fill")
                     .font(.footnote)
-                    .foregroundColor(!note.starred ? .yellow : .gray)
+                    .foregroundColor(note.starred ? .yellow : .gray)
                     .padding(3)
                     .background(Circle())
             }

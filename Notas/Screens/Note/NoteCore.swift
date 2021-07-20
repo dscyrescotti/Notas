@@ -10,21 +10,28 @@ import ComposableArchitecture
 import RealmSwift
 import Combine
 
-struct NoteState: Equatable {
-    let note: Note
+struct NoteState: Equatable, Identifiable {
+    let id: UUID
     let mode: Mode
     var title: String
     var body: String
     var theme: NoteTheme
     var starred: Bool
     
+    var isDismiss = false
+    
     init(_ mode: Mode) {
         self.mode = mode
-        self.note = mode.note
+        let note = mode.note
+        self.id = note.id
         self.title = note.title
         self.body = note.body
         self.theme = note.theme
         self.starred = note.starred
+    }
+    
+    var object: NoteObject {
+        .init(value: ["id": id, "title": title, "body": body, "theme": theme, "starred": starred])
     }
 }
 
@@ -42,7 +49,7 @@ enum NoteAction: Equatable {
     case create
     case delete
     
-    case transaction(Result<Signal, AppError>)
+    case result(Result<Signal, AppError>)
 }
 
 struct NoteEnvironment {
@@ -53,30 +60,47 @@ struct NoteEnvironment {
         self.realm = try! Realm()
         self.mainQueue = AnyScheduler.main
     }
+    
+    init(realm: Realm, mainQueue: AnySchedulerOf<DispatchQueue>) {
+        self.realm = realm
+        self.mainQueue = mainQueue
+    }
 }
 
 let noteReducer = Reducer<NoteState, NoteAction, NoteEnvironment> { state, action, environment in
+    struct Cancellable: Hashable { }
     switch action {
     case .onAppear:
+        print(state.id)
         if state.mode == .create {
             return .init(value: .create)
         }
         return .none
     case .onDisappear:
         if state.mode == .create, state.body.isEmpty {
-            return .init(value: .delete)
+            return .concatenate(
+                .cancel(id: Cancellable()),
+                .init(value: .delete)
+            )
         }
-        return .none
+        return .concatenate(
+            .cancel(id: Cancellable()),
+            environment.realm
+                .save(NoteObject(value: state.object))
+                .catchToEffect()
+                .map { NoteAction.result($0) }
+                .eraseToEffect()
+        )
     
     case .titleChange(let title):
         state.title = title
         return .init(value: .save(.title(title)))
-            .throttle(id: CancelToken(), for: .milliseconds(500), scheduler: environment.mainQueue, latest: true)
+            .throttle(id: Cancellable(), for: .milliseconds(500), scheduler: environment.mainQueue, latest: true)
             .eraseToEffect()
     case .bodyChange(let body):
         state.body = body
         return .init(value: .save(.body(body)))
-            .throttle(id: CancelToken(), for: .milliseconds(500), scheduler: environment.mainQueue, latest: true)
+            .throttle(id: Cancellable(), for: .milliseconds(500), scheduler: environment.mainQueue, latest: true)
             .eraseToEffect()
     case .themeChange(let theme):
         state.theme = theme
@@ -87,22 +111,22 @@ let noteReducer = Reducer<NoteState, NoteAction, NoteEnvironment> { state, actio
         
     case .create:
         return environment.realm
-            .create(NoteObject.self, object: state.note.object)
+            .create(NoteObject.self, object: state.object)
             .catchToEffect()
-            .map { NoteAction.transaction($0) }
+            .map { NoteAction.result($0) }
             .eraseToEffect()
     case .save(let change):
         let (key, value) = change.value
         return environment.realm
-            .save(NoteObject.self, value: ["id": state.note.id, key: value])
+            .save(NoteObject.self, value: ["id": state.id, key: value])
             .catchToEffect()
-            .map { NoteAction.transaction($0) }
+            .map { NoteAction.result($0) }
             .eraseToEffect()
     case .delete:
         return environment.realm
-            .delete(object: state.note.object)
+            .delete(NoteObject.self, id: state.id)
             .catchToEffect()
-            .map { NoteAction.transaction($0) }
+            .map { NoteAction.result($0) }
             .eraseToEffect()
     default:
         return .none

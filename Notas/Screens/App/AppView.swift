@@ -15,7 +15,7 @@ struct AppView: View {
             WithViewStore(store) { viewStore in
                 TabView(selection: viewStore.binding(get: { $0.selection }, send: { .tabChange($0) })) {
                     Group {
-                        NotesView()
+                        NotesView(store: notesStore)
                             .tabItem {
                                 Label(title: {
                                     Text("Notes")
@@ -35,7 +35,7 @@ struct AppView: View {
                             .tag(Selection.starred)
                     }
                     .overlay(
-                        NavigationLink(destination: NoteView.storeView(.create)) {
+                        NavigationLink(destination: NoteView.storeView(.create), isActive: viewStore.binding(get: { $0.isActive }, send: { .isActiveChange($0) })) {
                             Image(systemName: "pencil")
                                 .font(Font.title.weight(.black))
                                 .foregroundColor(Color(.systemBackground))
@@ -63,6 +63,10 @@ struct AppView: View {
 extension AppView {
     static func storeView() -> Self {
         .init(store: .init(initialState: .init(), reducer: appReducer, environment: .init()))
+    }
+    
+    var notesStore: Store<NotesState, NotesAction> {
+        store.scope(state: { $0.notesState }, action: AppAction.notes)
     }
 }
 

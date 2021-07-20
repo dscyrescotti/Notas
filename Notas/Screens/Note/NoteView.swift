@@ -43,8 +43,17 @@ struct NoteView: View {
                 Color(hex: viewStore.theme.rawValue)
                     .ignoresSafeArea()
             )
-            .navigationBarButtonItems(
-                Button(action: {
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(
+                leading: Button(action: {
+                    viewStore.send(.onDisappear)
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: "arrow.backward")
+                        .font(Font.title3.weight(.heavy))
+                })
+                .buttonStyle(SpringButtonStyle()),
+                trailing: Button(action: {
                     viewStore.send(.starredChange(!viewStore.starred))
                 }, label: {
                     Image(systemName: "star.fill")
@@ -70,6 +79,10 @@ struct NoteView: View {
 
 extension NoteView {
     static func storeView(_ mode: Mode) -> Self {
+        NoteView(store: .init(initialState: .init(mode), reducer: noteReducer, environment: .init()))
+    }
+    
+    static func storeView(_ mode: Mode, environment: AppEnvironment) -> Self {
         NoteView(store: .init(initialState: .init(mode), reducer: noteReducer, environment: .init()))
     }
 }
