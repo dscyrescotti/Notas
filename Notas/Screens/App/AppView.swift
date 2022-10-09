@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct AppView: View {
     let store: Store<AppState, AppAction>
     var body: some View {
-        NavigationView {
+        NavigationStack {
             WithViewStore(store) { viewStore in
                 TabView(selection: viewStore.binding(get: { $0.selection }, send: { .tabChange($0) })) {
                     Group {
@@ -54,7 +54,6 @@ struct AppView: View {
                 .navigationTitle("Notas")
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
         .accentColor(Color(.label))
     }
 }

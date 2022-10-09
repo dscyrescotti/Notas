@@ -29,7 +29,7 @@ struct NoteView: View {
                                 .foregroundColor(Color(.gray).opacity(0.7))
                         }
                         TextEditor(text: viewStore.binding(get: { $0.body }, send: { .bodyChange($0) }))
-//                            .frame(minHeight: 18)
+                            .scrollContentBackground(.hidden)
                     }
                     .font(.body)
                 }
@@ -49,17 +49,16 @@ struct NoteView: View {
                     presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Image(systemName: "arrow.backward")
-                        .font(Font.title3.weight(.heavy))
+                        .font(Font.headline.weight(.medium))
                 })
                 .buttonStyle(SpringButtonStyle()),
                 trailing: Button(action: {
                     viewStore.send(.starredChange(!viewStore.starred))
                 }, label: {
-                    Image(systemName: "star.fill")
-                        .font(Font.title3.weight(.heavy))
+                    Image(systemName: viewStore.starred ? "star.fill" : "star")
+                        .font(Font.headline.weight(.medium))
                 })
                 .buttonStyle(SpringButtonStyle())
-                .foregroundColor(viewStore.starred ? .yellow : .gray)
             )
             .onAppear {
                 viewStore.send(.onAppear)
@@ -90,5 +89,13 @@ extension NoteView {
 struct NoteView_Previews: PreviewProvider {
     static var previews: some View {
         AppView.storeView()
+    }
+}
+
+extension UITextView {
+    open override var frame: CGRect {
+        didSet {
+            backgroundColor = .clear
+        }
     }
 }
